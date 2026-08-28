@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #111412;
+  --color-card-dark: #1B211E;
+  --color-gold: #C5A15A;
+  --color-gold-light: #E5C17A;
+  --color-cream: #F2EFE7;
+  --color-muted: #A8AAA3;
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #111412;
+  color: #F2EFE7;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Gold Gradients & Luxury Cards */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F2EFE7 0%, #C5A15A 50%, #E5C17A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C5A15A 0%, #A6823B 100%);
+}
+
+.gold-gradient-bg-hover:hover {
+  background: linear-gradient(135deg, #E5C17A 0%, #C5A15A 100%);
+}
+
+.gold-border {
+  border-color: rgba(197, 161, 90, 0.25);
+}
+
+.gold-border-hover:hover {
+  border-color: rgba(197, 161, 90, 0.6);
+}
+
+.glass-panel {
+  background: rgba(27, 33, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111412;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B211E;
+  border: 1px solid rgba(197, 161, 90, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A15A;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-pulse-gold {
+  animation: pulseGold 4s ease-in-out infinite;
+}
+
